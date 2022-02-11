@@ -12,6 +12,7 @@ services:
       - mongo
     volumes:
       - .:/usr/src/app
+      - /usr/src/app/node_modules
   mongo:
     container_name: mongodatabase # contenedor de mongo
     image: mongo

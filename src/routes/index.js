@@ -3,6 +3,7 @@ const router = express.Router();
 const candelRoutes = require("./candels.routes");
 const soapRoutes = require("./soap.routes");
 const materialRoutes = require("./material.routes");
+const userRoutes = require("./users.routes");
 
 const defaultRoutes = [
   {
@@ -16,6 +17,10 @@ const defaultRoutes = [
   {
     path: "/materials",
     route: materialRoutes,
+  },
+  {
+    path: "/users",
+    route: userRoutes,
   },
 ];
 

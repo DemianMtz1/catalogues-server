@@ -1,17 +1,17 @@
 const mongoose = require("mongoose");
 
-const soapSchema = mongoose.Schema(
+const courseSchema = mongoose.Schema(
   {
     name: {
       type: String,
       required: true,
-      unique: true,
     },
     description: {
       type: String,
       required: true,
+      maxLength: [300, "Too much text..."],
     },
-    img: {
+    address: {
       type: String,
       required: true,
     },
@@ -19,15 +19,20 @@ const soapSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
+    materials: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Material",
+      },
+    ],
   },
   {
     timestamps: true,
   }
 );
-
 /**
- * @typedef Soap
+ * @typedef Course
  */
-const Soap = mongoose.model("Soap", soapSchema);
+const Course = mongoose.model("Course", courseSchema);
 
-module.exports = Soap;
+module.exports = Course;
