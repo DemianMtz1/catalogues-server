@@ -11,6 +11,10 @@ const courseSchema = mongoose.Schema(
       required: true,
       maxLength: [300, "Too much text..."],
     },
+    city: {
+      type: String,
+      required: true,
+    },
     address: {
       type: String,
       required: true,

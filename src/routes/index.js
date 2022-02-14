@@ -4,6 +4,7 @@ const candelRoutes = require("./candels.routes");
 const soapRoutes = require("./soap.routes");
 const materialRoutes = require("./material.routes");
 const userRoutes = require("./users.routes");
+const courseRoutes = require("./course.routes");
 
 const defaultRoutes = [
   {
@@ -21,6 +22,10 @@ const defaultRoutes = [
   {
     path: "/users",
     route: userRoutes,
+  },
+  {
+    path: "/courses",
+    route: courseRoutes,
   },
 ];
 

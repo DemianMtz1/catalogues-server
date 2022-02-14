@@ -1,11 +1,12 @@
 const { Router } = require("express");
 const { candelsController } = require("../controllers");
+const isAuth = require("../middlewares/validateToken");
 const router = Router();
 
-router.get("/", candelsController.getAllCandels);
+router.get("/", isAuth, candelsController.getAllCandels);
 router.get("/:id", candelsController.getCandelById);
-router.post("/", candelsController.postCandel);
-router.delete("/:id", candelsController.deleteCandelById);
-router.put("/:id", candelsController.putCandelById);
+router.post("/", isAuth, candelsController.postCandel);
+router.delete("/:id", isAuth, candelsController.deleteCandelById);
+router.put("/:id", isAuth, candelsController.putCandelById);
 
 module.exports = router;

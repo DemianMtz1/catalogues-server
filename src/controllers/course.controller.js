@@ -31,13 +31,14 @@ const getCourseById = async (req, res, next) => {
 
 const postCourse = async (req, res, next) => {
   try {
-    const { name, description, price, address, materials } = req.body;
-    if (!name || !description || !price || !address || !materials)
+    const { name, description, price, address, materials, city } = req.body;
+    if (!name || !description || !price || !address || !materials || !city)
       throw new Error("Invalid params, please verify.");
 
     const course = await courseService.create(
       name,
       description,
+      city,
       address,
       price,
       materials
