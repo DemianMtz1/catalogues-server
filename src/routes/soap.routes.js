@@ -5,7 +5,7 @@ const multer = require("multer");
 const upload = multer();
 const router = Router();
 
-router.get("/", isAuth, soapsController.getAllSoaps);
+router.get("/", soapsController.getAllSoaps);
 router.get("/:id", soapsController.getSoapById);
 router.post("/", isAuth, upload.single("img"), soapsController.postSoap);
 router.delete("/:id", isAuth, soapsController.deleteSoapById);
